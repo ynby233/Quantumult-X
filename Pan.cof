@@ -1,0 +1,87 @@
+# Quantumult X 配置
+
+[general]
+resource_parser_url=https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/resource-parser.js
+
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/Orz-3/Orz-3/master/QuantumultX/IP.js
+
+server_check_url=http://cp.cloudflare.com/generate_204
+
+dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina.com
+
+;excluded_routes=192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8
+# Hearthstone: 24.105.30.129/32, 185.60.112.157/32, 185.60.112.158/32, 182.162.132.1/32
+excluded_routes=239.255.255.250/32, 24.105.30.129/32, 185.60.112.157/32, 185.60.112.158/32, 182.162.132.1/32
+
+running_mode_trigger=filter, filter
+
+udp_whitelist=1-442, 444-65535
+
+[dns]
+no-ipv6
+
+server=119.29.29.29
+server=223.5.5.5
+
+# > Apple
+server=/aaplimg.com/119.29.29.29
+server=/apple.com/119.29.29.29
+server=/apple.com.cn/119.29.29.29
+server=/apple-cloudkit.com/119.29.29.29
+server=/apple-livephotoskit.com/119.29.29.29
+server=/apple-mapkit.com/119.29.29.29
+server=/cdn-apple.com/119.29.29.29
+server=/icloud.com/119.29.29.29
+server=/icloud.com.cn/119.29.29.29
+server=/mzstatic.com/119.29.29.29
+server=/*.aaplimg.com/119.29.29.29
+server=/*.apple.com/119.29.29.29
+server=/*.apple-cloudkit.com/119.29.29.29
+server=/*.apple-livephotoskit.com/119.29.29.29
+server=/*.apple-mapkit.com/119.29.29.29
+server=/*.cdn-apple.com/119.29.29.29
+server=/*.icloud.com/119.29.29.29
+server=/*.icloud.com.cn/119.29.29.29
+server=/*.mzstatic.com/119.29.29.29
+server=/*apple.com.akadns.net/119.29.29.29
+server=/*.apple.com.edgekey.net/119.29.29.29
+server=/*.apple.com.edgekey.net.globalredir.akadns.net/119.29.29.29
+server=/*icloud.com.akadns.net/119.29.29.29
+
+[policy]
+available=𝐏𝐫𝐨𝐱𝐲,server-tag-regex=港,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+
+[server_remote]
+http://galben.xyz/link/Ab20qx71arpOXyfF?sub=3&extend=1, tag=𝐌𝐚𝐨𝐱𝐢𝐨𝐧𝐠, as-policy=static, update-interval=172800, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Available.png, enabled=true
+
+[filter_remote]
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Telegram/Telegram.list, tag=𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦, force-policy=𝐏𝐫𝐨𝐱𝐲, update-interval=604800, opt-parser=true, enabled=true
+
+[rewrite_remote]
+
+[server_local]
+
+[filter_local]
+host-suffix, local, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 100.64.0.0/10, direct
+ip-cidr, 224.0.0.0/4, direct
+ip6-cidr, fe80::/10, direct
+
+final, direct
+
+[rewrite_local]
+
+[task_local]
+
+[http_backend]
+
+[mitm]
+;passphrase =
+;p12 =
+skip_validating_cert = true
+;force_sni_domain_name = false
+;simple_cert_hostname = non-existed-domain.com, *.non-connected-domain.com
